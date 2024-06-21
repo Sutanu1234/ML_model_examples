@@ -1,3 +1,3 @@
 # ML_model_examples
 
-:memo: **Note:** See the Branchs.
+:memo: **Note:** See the Branches.
