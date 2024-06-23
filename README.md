@@ -1,18 +1,78 @@
-# $Sonar Object Classification Using Logistic Regression
-<b>Overview</b><br>
+# Loan Eligibility Prediction
 
-This project involves building a machine learning model to classify objects as either rocks or mines based on sonar signal returns. Using the Sonar Dataset, which contains 60 features representing sonar signal intensities at various angles, the goal is to develop a robust logistic regression model. The model aims to accurately distinguish between rocks and mines, with potential applications in underwater exploration and submarine detection. The project includes data preprocessing, model training, evaluation, and visualization of results to ensure the model's effectiveness.
+This project aims to predict loan eligibility based on various attributes of loan applicants using a Support Vector Machine (SVM) model. The dataset includes information about the applicants' demographics, education, employment, income, loan amount, credit history, and property area.
 
+## Table of Contents
+- [Overview](#overview)
+- [Dataset](#dataset)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model](#model)
+- [Results](#results)
+- [Contributing](#contributing)
+- [License](#license)
 
+## Overview
+The primary goal of this project is to build a predictive model that can classify whether a loan will be approved or not based on historical data. The dataset used contains various features such as gender, marital status, number of dependents, education level, employment status, income details, loan amount, loan term, credit history, and property area.
 
-# Accuracy of this model:
-  <li>Accuracy on traing data: 0.8181818181818182</li>
-  <li>Accuracy score of test data :  0.9047619047619048</li>
+## Dataset
+The dataset used for this project is `dataset.csv`. It includes the following columns:
+- `Loan_ID`: Unique Loan ID
+- `Gender`: Gender of the applicant
+- `Married`: Marital status
+- `Dependents`: Number of dependents
+- `Education`: Education level
+- `Self_Employed`: Self-employed status
+- `ApplicantIncome`: Applicant's income
+- `CoapplicantIncome`: Co-applicant's income
+- `LoanAmount`: Loan amount
+- `Loan_Amount_Term`: Loan term in months
+- `Credit_History`: Credit history (1: good, 0: bad)
+- `Property_Area`: Property area (Rural, Semiurban, Urban)
+- `Loan_Status`: Loan status (Y: approved, N: not approved)
 
-# $Graphs:
+## Installation
+To run this project locally, follow these steps:
 
-<img src = "https://github.com/Sutanu1234/ML_model_examples/assets/123285380/b51ba889-b436-408d-86a9-7e8262581b42" /><br>
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/loan-eligibility-prediction.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd loan-eligibility-prediction
+    ```
+3. Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-<img src = "https://github.com/Sutanu1234/ML_model_examples/assets/123285380/02068a43-8ba5-4b8b-bb05-13f01228bdc8" /><br>
+## Usage
+1. Ensure the `dataset.csv` file is in the project directory.
+2. Run the script to train the model and make predictions:
+    ```bash
+    python loan_prediction.py
+    ```
 
-<img src = "https://github.com/Sutanu1234/ML_model_examples/assets/123285380/5d2eb5cf-f354-4bb7-bdab-97fb07b53d3a" />
+## Model
+The project uses a Support Vector Machine (SVM) with a linear kernel for training the classification model. The data preprocessing steps include handling missing values, label encoding, and splitting the data into training and testing sets.
+
+## Results
+The model's performance is evaluated using accuracy metrics on both training and test data. Example accuracy results are:
+- Training data accuracy: 81.11%
+- Test data accuracy: 81.25%
+
+Example prediction for an input data point:
+```python
+input_data = (1, 1, 0, 0, 0, 7660, 0, 104, 360, 0, 2)
+```
+The prediction result indicates whether the loan is approved or not.
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request for any improvements or new features.
+
+## License
+This project is licensed under the `MIT License`. See the `LICENSE` file for more details.
+
+Save this content in a file named `README.md` in your project's root directory. This will provide an overview of the project and instructions for setting it up and using it.
+
