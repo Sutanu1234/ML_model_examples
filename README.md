@@ -37,7 +37,7 @@ Necessary libraries for data manipulation, visualization, and clustering are imp
 ### 2. Customer Groups Visualization
 - **Description:** Displays the clusters and their centroids.
 - **Purpose:** Helps visualize the distinct customer segments.
-- **Image:** ![image](https://github.com/user-attachments/assets/d7cd286a-ae91-4f23-aa20-baf67e772c29)
+- **Image:** ![image](https://github.com/user-attachments/assets/234c12b3-a351-489f-8832-5417ef9c2d94)
 
 ## Conclusion
 The K-Means clustering algorithm successfully groups customers into five distinct segments based on their annual income and spending score. This segmentation helps in identifying different customer behaviors, which can be useful for targeted marketing strategies.
