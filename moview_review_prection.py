@@ -21,6 +21,9 @@ df = pd.read_csv('IMDB Dataset.csv')
 # Replace sentiment values with numerical values
 df['sentiment'].replace({'positive': 1, 'negative': 0}, inplace=True)
 
+# Check for NaN values in the sentiment column and drop them
+df.dropna(subset=['sentiment'], inplace=True)
+
 # Function to clean text
 def clean_text(text):
     text = re.sub('<.*?>', '', text)  # Remove HTML tags
@@ -48,6 +51,10 @@ df['review'] = df['review'].apply(preprocess_text)
 cv = CountVectorizer(max_features=5000)
 X = cv.fit_transform(df['review']).toarray()
 y = df['sentiment']
+
+# Check for NaN values in X and y
+print(np.isnan(X).sum())  # Should be 0
+print(np.isnan(y).sum())  # Should be 0
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
