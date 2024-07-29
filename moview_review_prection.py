@@ -14,9 +14,9 @@ nltk.download('stopwords')
 
 # Load the dataset
 df = pd.read_csv('IMDB Dataset.csv')
-print(df.head())  # Display the first 5 rows of the dataframe
-print(df.shape)  # Display the shape of the dataframe
-print(df.info())  # Display the info of the dataframe
+#print(df.head())  # Display the first 5 rows of the dataframe
+#print(df.shape)  # Display the shape of the dataframe
+#print(df.info())  # Display the info of the dataframe
 
 # Replace sentiment values with numerical values
 df['sentiment'].replace({'positive': 1, 'negative': 0}, inplace=True)
