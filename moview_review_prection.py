@@ -111,3 +111,24 @@ from sklearn.metrics import accuracy_score
 print(f"Gaussian Naive Bayes Accuracy: {accuracy_score(y_test, y_pred1)}")
 print(f"Multinomial Naive Bayes Accuracy: {accuracy_score(y_test, y_pred2)}")
 print(f"Bernoulli Naive Bayes Accuracy: {accuracy_score(y_test, y_pred3)}")
+
+
+# Function to predict sentiment of a new review
+def predict_sentiment(review):
+    # Clean the review
+    review = clean_text(review)
+    # Preprocess the review
+    review = preprocess_text(review)
+    # Convert to token counts
+    review_vector = cv.transform([review]).toarray()
+    # Predict using Multinomial Naive Bayes (you can choose any of the trained models)
+    prediction = clf2.predict(review_vector)
+    # Return sentiment
+    return 'positive' if prediction == 1 else 'negative'
+
+# Take user input
+user_review = input("Enter a movie review: ")
+
+# Predict and print the sentiment
+predicted_sentiment = predict_sentiment(user_review)
+print(f"The predicted sentiment for the review is: {predicted_sentiment}")
